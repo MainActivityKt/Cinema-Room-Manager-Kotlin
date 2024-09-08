@@ -14,6 +14,7 @@ fun addRow(rowNumber: Int): String {
         }
     }
 }
+
 fun main(args: Array<String>) {
     println("$TITLE:")
     val cinema = buildString {
