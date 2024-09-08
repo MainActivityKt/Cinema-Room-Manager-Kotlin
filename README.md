@@ -1,1 +1,1 @@
-Cinema ROom Manager
+Cinema Room Manager
