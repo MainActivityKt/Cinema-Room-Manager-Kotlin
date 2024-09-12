@@ -1,8 +1,8 @@
 package cinemamanager
 
+import Utils.SPACE
+import Utils.TITLE
 
-const val TITLE: String = "Cinema"
-const val SPACE: String = " "
 
 fun addRow(rowNumber: Int): String {
     return buildString {

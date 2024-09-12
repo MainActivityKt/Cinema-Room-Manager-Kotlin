@@ -1,12 +1,13 @@
 package cinemamanager
 
-import Utils.GET_NUM_OF_SEATS
+import Utils.BACK_ROW_PRICE_PER_SEAT
+import Utils.FRONT_ROW_PRICE_PER_SEAT
+import Utils.SMALL_CINEMA_MAX_SEATS
+import Utils.TXT_GET_NUM_OF_SEATS
 import Utils.TXT_GET_NUM_OF_ROWS
 import Utils.getInput
 
-const val BACK_ROW_PRICE_PER_SEAT = 8
-const val FRONT_ROW_PRICE_PER_SEAT = 10
-const val SMALL_CINEMA_MAX_SEATS = 60
+
 
 fun calculateProfits(numOfRows: Int, seatsPerRow: Int) {
     // A simple functions that calculates and prints the profits, based on number of seats
@@ -25,6 +26,6 @@ fun calculateProfits(numOfRows: Int, seatsPerRow: Int) {
 
 fun main() {
     val rows = getInput(TXT_GET_NUM_OF_ROWS).toInt()
-    val seatsPerRow = getInput(GET_NUM_OF_SEATS).toInt()
+    val seatsPerRow = getInput(TXT_GET_NUM_OF_SEATS).toInt()
     calculateProfits(rows, seatsPerRow)
 }
