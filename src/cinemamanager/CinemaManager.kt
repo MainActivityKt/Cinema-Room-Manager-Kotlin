@@ -12,8 +12,8 @@ import Utils.Seat
 import Utils.print
 
 
-class CinemaManager {
-    private var arrayOfSeats: Array<Array<Seat>>
+open class CinemaManager {
+    protected var arrayOfSeats: Array<Array<Seat>>
 
     private val menu = StringBuilder().apply {
         appendLine("1. Show the seats")
@@ -28,7 +28,7 @@ class CinemaManager {
         println()
     }
 
-    fun run() {
+    open fun run() {
         printMenu()
         val input = readln().toInt()
 
@@ -41,11 +41,11 @@ class CinemaManager {
         }
     }
 
-    private fun printMenu() {
+    protected open fun printMenu() {
         println(menu)
     }
 
-    private fun buyTicket() {
+    protected open fun buyTicket() {
         val row = getInput(GET_ROW_NUMBER).toInt()
         val seat = getInput(GET_SEAT_NUMBER).toInt()
         println()

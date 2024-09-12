@@ -106,3 +106,205 @@ Stage implementation: [TicketSimulator.kt](src/cinemamanager/TicketSimulator.kt)
     6 S S S S S S S S
     7 S S S S S S S S
 
+## Stage 4/5: Menu, please!
+Now, our program runs in a loop and prints a menu on each iteration, from which the user can
+choose any of the following actions: Buying a ticket, or showing the current seats arrangement
+
+The user can exit out of the program by choosing the exit option from the menu.
+
+Stage implementation: [CinemaManager.kt](src/cinemamanager/CinemaManager.kt)
+
+**Example:**
+
+    Enter the number of rows:
+    > 7
+    Enter the number of seats in each row:
+    > 7
+    
+    1. Show the seats
+    2. Buy a ticket
+    0. Exit
+    > 1
+    
+    Cinema:
+    1 2 3 4 5 6 7
+    1 S S S S S S S
+    2 S S S S S S S
+    3 S S S S S S S
+    4 S S S S S S S
+    5 S S S S S S S
+    6 S S S S S S S
+    7 S S S S S S S
+    
+    1. Show the seats
+    2. Buy a ticket
+    0. Exit
+    > 2
+    
+    Enter a row number:
+    > 4
+    Enter a seat number in that row:
+    > 5
+    Ticket price: $10
+    
+    1. Show the seats
+    2. Buy a ticket
+    0. Exit
+    > 1
+    
+    Cinema:
+    1 2 3 4 5 6 7
+    1 S S S S S S S
+    2 S S S S S S S
+    3 S S S S S S S
+    4 S S S S B S S
+    5 S S S S S S S
+    6 S S S S S S S
+    7 S S S S S S S
+    
+    1. Show the seats
+    2. Buy a ticket
+    0. Exit
+    > 2
+    
+    Enter a row number:
+    > 6
+    Enter a seat number in that row:
+    > 6
+    Ticket price: $10
+    
+    1. Show the seats
+    2. Buy a ticket
+    0. Exit
+    > 1
+    
+    Cinema:
+    1 2 3 4 5 6 7
+    1 S S S S S S S
+    2 S S S S S S S
+    3 S S S S S S S
+    4 S S S S B S S
+    5 S S S S S S S
+    6 S S S S S B S
+    7 S S S S S S S
+    
+    1. Show the seats
+    2. Buy a ticket
+    0. Exit
+    > 0
+
+## Stage 5/5: Errors!
+
+In this stage:
+
+- A new option is added to the menu, which prints the current statistics. It contains 
+calculations such the number of sold tickets, current income which is the sum of the sold 
+tickets' prices, and the total income that shows how much money the theatre will get
+if all the tickets are sold.
+- The buying ticket function can now handle some errors such as inputting the wrong seat coordinates, and
+trying to buy an already sold out seat, and gives feedback to the user. 
+
+Because this stage is build upon the last stage, inheritance is used, the modified behaviours 
+are overridden and the new function(s) are added.
+
+Stage implementation: [CinemaManagerWithStatistics.kt](src/cinemamanager/CinemaManagerWithStatistics.kt)
+
+**Example:**
+    Enter the number of rows:
+    > 6
+    Enter the number of seats in each row:
+    > 6
+    
+    1. Show the seats
+    2. Buy a ticket
+    3. Statistics
+    0. Exit
+    > 3
+    
+    Number of purchased tickets: 0
+    Percentage: 0.00%
+    Current income: $0
+    Total income: $360
+    
+    1. Show the seats
+    2. Buy a ticket
+    3. Statistics
+    0. Exit
+    > 2
+    
+    Enter a row number:
+    > 1
+    Enter a seat number in that row:
+    > 1
+    
+    Ticket price: $10
+    
+    1. Show the seats
+    2. Buy a ticket
+    3. Statistics
+    0. Exit
+    > 3
+    
+    Number of purchased tickets: 1
+    Percentage: 2.78%
+    Current income: $10
+    Total income: $360
+    
+    1. Show the seats
+    2. Buy a ticket
+    3. Statistics
+    0. Exit
+    > 2
+    
+    Enter a row number:
+    > 1
+    Enter a seat number in that row:
+    > 1
+    
+    That ticket has already been purchased!
+    
+    Enter a row number:
+    > 10
+    Enter a seat number in that row:
+    > 20
+    
+    Wrong input!
+    
+    Enter a row number:
+    > 4
+    Enter a seat number in that row:
+    > 4
+    
+    Ticket price: $10
+    
+    1. Show the seats
+    2. Buy a ticket
+    3. Statistics
+    0. Exit
+    > 1
+    
+    Cinema:
+    1 2 3 4 5 6
+    1 B S S S S S
+    2 S S S S S S
+    3 S S S S S S
+    4 S S S B S S
+    5 S S S S S S
+    6 S S S S S S
+    
+    1. Show the seats
+    2. Buy a ticket
+    3. Statistics
+    0. Exit
+    > 3
+    
+    Number of purchased tickets: 2
+    Percentage: 5.56%
+    Current income: $20
+    Total income: $360
+    
+    1. Show the seats
+    2. Buy a ticket
+    3. Statistics
+    0. Exit
+    > 0
